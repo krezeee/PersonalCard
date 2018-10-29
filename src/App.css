@@ -1,32 +1,121 @@
 .App {
-  text-align: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-family: 'Cormorant Garamond', serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.dark-theme {
+    background: url('./content/stars.jpg');
+    background-repeat: no-repeat;
+    -webkit-animation: zoomin 15s ease-in;
+    animation: zoomin 15s ease-in;
+    transition: all .5s ease-in;
+    animation-fill-mode: forwards;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@-webkit-keyframes zoomin {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes zoomin {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.light-theme {
+    background: url('./content/wavy-dots.png');
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.logo-light {
+    margin-left: 50px;
+    font-family: 'Gloria Hallelujah';
+    font-size: 36px;
+    transition: font-size 0.8s;
+    color: rgb(255, 240, 255);
+}
+
+.logo-dark {
+    margin-left: 50px;
+    font-family: 'Gloria Hallelujah';
+    font-size: 36px;
+    transition: font-size 0.8s;
+    color: rgb(0, 0, 0);
+}
+
+.logo:hover {
+    font-size: 37px;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.techStackItem {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.techStackItem:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.socialItem {
+    height: 20px;
+    width: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialItem:hover {
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.4);
 }
