@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Button } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
 
 export default class Landing extends Component {
     render() {
@@ -6,16 +8,12 @@ export default class Landing extends Component {
             <div className='component' style={{ width: '600px' }}>
                 <h1>Hello! I'm Paweł!</h1>
                 <h3>Want to know about me?</h3>
-                <button onClick={this.props.action}
-                    style={{
-                        width: '100px',
-                        height: '100px',
-                        borderRadius: '50px'
-                    }}>
-                    <p style={{ fontWeight: 'bold' }}>
-                        Click here
-                    </p>
-                </button>
+                <Button onClick={this.props.action}
+                    variant="fab"
+                    color="outline"
+                    aria-label="Add">
+                    <AddIcon />
+                </Button>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Switch } from '@material-ui/core';
 
 export default class Header extends Component {
     render() {
@@ -20,7 +21,9 @@ export default class Header extends Component {
                 </div>
 
                 <div>
-                    <button onClick={this.props.toggleTheme} Toggle></button>
+                    <Switch color="default"
+                        checked={this.props.isDarkTheme}
+                        onChange={this.props.toggleTheme} />
                 </div>
             </div >
         )
