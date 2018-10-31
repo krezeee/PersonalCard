@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
+import Face from '@material-ui/icons/Face';
 
 export default class Landing extends Component {
     render() {
@@ -12,7 +12,7 @@ export default class Landing extends Component {
                     variant="fab"
                     color="outline"
                     aria-label="Add">
-                    <AddIcon />
+                    <Face />
                 </Button>
             </div>
         )
