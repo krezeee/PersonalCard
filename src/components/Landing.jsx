@@ -7,7 +7,7 @@ export default class Landing extends Component {
         return (
             <div className='component' style={{ width: '600px' }}>
                 <h1>Hello! I'm Paweł!</h1>
-                <h3>Want to know about me?</h3>
+                <h3>Want to know something more about me?</h3>
                 <Button onClick={this.props.action}
                     variant="fab"
                     color="outline"

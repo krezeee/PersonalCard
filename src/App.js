@@ -13,7 +13,7 @@ class App extends Component {
     super(props)
     this.state = {
       aboutDetails: false,
-      isDarkTheme: true
+      isDarkTheme: false
     }
 
     this.expandAbout = this.expandAbout.bind(this);
