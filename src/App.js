@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './CSSReset.css'
 import './App.css';
 import About from './components/about/About';
 import Projects from './components/projects/Projects';
