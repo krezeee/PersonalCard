@@ -1,8 +1,7 @@
 import React from 'react'
-import posed, { PoseGroup } from 'react-pose';
-import { linear } from '@popmotion/easing';
+import posed from 'react-pose';
 
-const withAnimation = (Component, delay) => {
+const withOpacityAppearance = (Component, delay) => {
     const Wrapped = posed.div({
         initial: {
             opacity: 0
@@ -19,8 +18,10 @@ const withAnimation = (Component, delay) => {
     });
 
     return (
-        <Wrapped initialPose='initial' pose='visible'
-            key='wrapped'>
+        <Wrapped
+            initialPose='initial'
+            pose='visible'
+            key={Component.key}>
             <div>
                 <Component />
             </div>
@@ -28,4 +29,4 @@ const withAnimation = (Component, delay) => {
     )
 }
 
-export default withAnimation
+export default withOpacityAppearance

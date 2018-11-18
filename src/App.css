@@ -5,52 +5,33 @@
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
+    background: url('./content/wavy-dots.png') center;
+    background-attachment: fixed;
+    background-size: auto;
+    background-repeat: repeat;
 }
 
-.dark-theme {
-    background: url('./content/stars.jpg');
-    background-repeat: no-repeat;
-    -webkit-animation: zoomin 15s ease-in;
-    animation: zoomin 15s ease-in;
-    transition: all .5s ease-in;
-    animation-fill-mode: forwards;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: -1;
+.full-size {
+    height: 100vh;
+    width: 100vh;
+    min-width: 600px;
+    z-index: 0;
 }
 
-@-webkit-keyframes zoomin {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1.2);
-    }
-}
-
-@keyframes zoomin {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1.2);
-    }
-}
-
-.light-theme {
-    background: url('./content/wavy-dots.png');
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: -1;
+.component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    min-width: 600px;
+    margin: 60px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-block-start-width: 1px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 0.5px;
+    border-radius: 10px;
 }
 
 .centered {
@@ -60,42 +41,8 @@
     align-items: center;
 }
 
-.component {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    width: 80%;
-    max-width: 1200px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
 .techStackItem {
     width: 50px;
     height: 50px;
     margin: 10px;
-}
-
-.techStackItem:hover {
-    transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
-}
-
-.socialItem {
-    height: 20px;
-    width: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.socialItem:hover {
-    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.4);
 }

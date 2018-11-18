@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import SocialPanel from './SocialPanel';
+import SocialPanel from './social/SocialPanel';
 import AboutContent from './AboutContent';
 import Image from './Image';
-import withAnimation from '../withAnimation'
+import withOpacityAppearance from '../animations/withOpacityAppearance'
+import Technologies from './technologies/Technologies';
 
 export default class About extends Component {
     render() {
         return (
-            <div style={{
-                marginTop: '40px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
+            <div className='full-size'>
                 <div className='component'>
-                    {withAnimation(Image, 300)}
-                    {withAnimation(SocialPanel, 500)}
-                    {withAnimation(AboutContent, 700)}
+                    {withOpacityAppearance(Image, 900)}
+                    {withOpacityAppearance(SocialPanel, 1100)}
+                    {withOpacityAppearance(AboutContent, 1300)}
+                    {withOpacityAppearance(Technologies, 1500)}
                 </div>
             </div>
         )

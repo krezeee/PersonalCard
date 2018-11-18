@@ -5,15 +5,26 @@ import Face from '@material-ui/icons/Face';
 export default class Landing extends Component {
     render() {
         return (
-            <div className='component' style={{ width: '600px' }}>
-                <h1>Hello! I'm Paweł!</h1>
-                <h3>Want to know something more about me?</h3>
-                <Button onClick={this.props.action}
-                    variant="fab"
-                    color="outline"
-                    aria-label="Add">
-                    <Face />
-                </Button>
+            <div className='full-size'
+                id='1'
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    fontFamily: 'Cormorant Garamond, serif'
+                }}>
+                <div className='centered'>
+                    <p style={{ fontSize: '60px', margin: '1px' }}>Hello,</p>
+                    <p style={{ fontSize: '48px', margin: '1px' }}>I'm Paweł</p>
+                    <p style={{ fontSize: '32px', margin: '1px' }}>and I code!</p>
+                    <Button style={{ marginTop: '20px' }}
+                        variant="fab"
+                        color="default"
+                        aria-label="Add"
+                        onClick={this.props.showAbout}>
+                        <Face />
+                    </Button>
+                </div>
             </div>
         )
     }

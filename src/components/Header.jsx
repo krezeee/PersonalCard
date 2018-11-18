@@ -6,17 +6,17 @@ export default class Header extends Component {
 
         return (
             <div style={{
+                position: "fixed",
                 width: '100%',
                 height: '80px',
                 display: 'flex',
                 justifyContent: 'flex-end',
                 alignItems: 'center'
             }}>
-
                 <div>
-                    <Switch color="default"
+                    {/* <Switch color="default"
                         checked={this.props.isDarkTheme}
-                        onChange={this.props.toggleTheme} />
+                        onChange={this.props.toggleTheme} /> */}
                 </div>
             </div >
         )
