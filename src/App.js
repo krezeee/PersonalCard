@@ -3,7 +3,6 @@ import './CSSReset.css'
 import './App.css';
 import About from './components/about/About';
 import Projects from './components/projects/Projects';
-import Header from './components/Header';
 import Landing from './components/Landing';
 import Sidenav from './components/sidenav/Sidenav';
 import withMoveAppearance from './components/animations/withMoveAppearence';
@@ -58,8 +57,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header toggleTheme={this.toggleTheme}
-          isDarkTheme={this.state.isDarkTheme} />
         <Sidenav
           showAbout={() => this.showAbout()}
           showLanding={() => this.showLanding()}

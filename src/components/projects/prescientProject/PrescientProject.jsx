@@ -4,27 +4,30 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import Prescient from '../../../content/prescient.jpg';
 
 function PrescientProject() {
     return (
-        <Card>
+        <Card >
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="Prescient"
                     width="200"
                     image={Prescient}
-                    title="Contemplative Reptile"
+                    title="Prescient"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <h2 style={{
+                        fontSize: '24px',
+                        marginTop: '10px',
+                        marginBottom: '30px'
+                    }}>
                         Prescient Co
-                    </Typography>
-                    <Typography component="p">
+                    </h2>
+                    <p style={{ fontSize: '16px' }}>
                         Went from being a Junior Software Tester to Lead Software Devloper. My role mainly focused on implementing new modules of a modern building design platform with .NET technology stack for desktop applications, but also maintenance and improvements of existing code. All worked out in Scrum methodology. Strongly oriented toward BIM technology and desing process improvements.
-                    </Typography>
+                    </p>
                 </CardContent>
             </CardActionArea>
         </Card>

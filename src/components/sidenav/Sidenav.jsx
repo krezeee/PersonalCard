@@ -6,20 +6,22 @@ import ProjectsIcon from './icons/ProjectsIcon';
 
 export default class Sidenav extends Component {
     render() {
-        
+
         return (
             <div style={{
                 position: 'fixed',
-                width: '50px',
-                height: '100%',
-                left: '0px',
+                width: '100%',
+                height: '50px',
+                top: '0px',
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 zIndex: '1'
             }}>
                 <div style={{
                     display: 'flex',
-                    flexDirection: 'column'
+                    justifyContent: 'space-around',
+                    width: '160px'
                 }}>
                     {withPress(LandingIcon, this.props.showLanding)}
                     {withPress(AboutIcon, this.props.showAbout)}

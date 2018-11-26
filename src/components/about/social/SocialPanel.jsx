@@ -8,7 +8,6 @@ export default class SocialPanel extends Component {
     render() {
         return (
             <div style={{ display: 'flex' }}>
-
                 {withPress(LinkedInIcon)}
                 {withPress(GitHubIcon)}
                 {withPress(TwitterIcon)}
