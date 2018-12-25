@@ -1,6 +1,6 @@
 export const Where2devProject = {
     title: 'where2dev',
-    description: ' A comprehensive set of resources for web development. Containing information about best platforms for developing, deploing and hosting your web apps. Except the domain name, all runs on free tiers with backend service hosted by Heroku, database by mLab and website deployed on Netlify. Application is still in beta version.'
+    description: ' A comprehensive set of resources for web development. Containing information about best platforms for developing, deploing and hosting your web apps. Except the domain name, all runs on free tiers with backend service hosted by Heroku, database by mLab and website deployed on Netlify. Application is still in development, but please check it out at: https://where2dev.netlify.com/'
 }
 
 export const PrescientProject = {
