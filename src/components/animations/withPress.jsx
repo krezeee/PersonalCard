@@ -27,7 +27,7 @@ const withPress = (Component, callback) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            margin: '10px'
+            margin: '15px'
         }}>
             <Component callback={callback} />
         </Wrapped>

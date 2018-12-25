@@ -4,32 +4,35 @@ p {
     font-size: 18px;
 }
 
-body, html { 
-    overflow-x: hidden; 
+body {
+    background: url('./content/wavy-dots.png') center;
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+html {
+    overflow-x: hidden;
     overflow-y: hidden;
 }
 
-.App {
-    text-align: center;
+.content {
+    height: 100vh;
+    width: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    background: url('./content/wavy-dots.png') center;
-    overflow: hidden;
-}
-
-.full-size {
+    z-index: 0;
     height: 100vh;
     width: 100vh;
+}
+
+.centered {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-width: 600px;
-    z-index: 0;
-    overflow: hidden;
+    justify-content: center;
 }
 
 .component {
@@ -45,13 +48,6 @@ body, html {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border: 0.5px;
     border-radius: 10px;
-}
-
-.centered {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .techStackItem {

@@ -4,7 +4,7 @@ import { IconButton } from '@material-ui/core';
 function GitHubIcon() {
     return (
         <IconButton>
-            <a href="https://github.com/krezeee">
+            <a className='centered' href="https://github.com/krezeee">
                 <svg  x="0px" y="0px" width="30px" height="30px" viewBox="0 0 450 450">
                     <g>
                         <path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365

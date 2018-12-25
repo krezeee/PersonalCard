@@ -12,7 +12,7 @@ export default class Sidenav extends Component {
                 position: 'fixed',
                 width: '100%',
                 height: '50px',
-                top: '0px',
+                top: '10px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',

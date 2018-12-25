@@ -22,9 +22,7 @@ const withOpacityAppearance = (Component, delay) => {
             initialPose='initial'
             pose='visible'
             key={Component.key}>
-            <div>
-                <Component />
-            </div>
+            <Component />
         </Wrapped>
     )
 }

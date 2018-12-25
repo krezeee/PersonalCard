@@ -4,7 +4,7 @@ import { IconButton } from '@material-ui/core';
 function TwitterIcon() {
     return (
     <IconButton>
-        <a href="https://twitter.com/krezeel">
+        <a className='centered' href="https://twitter.com/krezeel">
             <svg x="0px" y="0px" width="30px" height="30px" viewBox="0 0 50 50" >
                 <g>
                     <path d="M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826

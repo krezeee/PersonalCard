@@ -4,7 +4,7 @@ import { IconButton } from '@material-ui/core';
 function LinkedInIcon() {
     return (
         <IconButton>
-            <a href="https://www.linkedin.com/in/pawe%C5%82-kr%C4%99%C5%BCel-2713a5b9/">
+            <a className='centered' href="https://www.linkedin.com/in/pawe%C5%82-kr%C4%99%C5%BCel-2713a5b9/">
                 <svg x="0px" y="0px" width="30px" height="30px" viewBox="0 0 50 50" >
                     <g>
                         <path d="M29.35,21.298c-2.125,0-3.074,1.168-3.605,1.988v-1.704h-4.002c0.052,1.128,0,12.041,0,12.041h4.002v-6.727

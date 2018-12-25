@@ -8,13 +8,11 @@ import Technologies from './technologies/Technologies';
 export default class About extends Component {
     render() {
         return (
-            <div className='full-size'>
-                <div className='component'>
-                    {withOpacityAppearance(Image, 900)}
-                    {withOpacityAppearance(SocialPanel, 1100)}
-                    {withOpacityAppearance(AboutContent, 1300)}
-                    {withOpacityAppearance(Technologies, 1500)}
-                </div>
+            <div className='component'>
+                {withOpacityAppearance(Image, 900)}
+                {withOpacityAppearance(SocialPanel, 1100)}
+                {withOpacityAppearance(AboutContent, 1300)}
+                {withOpacityAppearance(Technologies, 1500)}
             </div>
         )
     }

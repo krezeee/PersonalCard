@@ -23,7 +23,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      showLanding: true
+      showProjects: true
     })
   }
 
@@ -56,13 +56,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
         <Sidenav
           showAbout={() => this.showAbout()}
           showLanding={() => this.showLanding()}
           showProjects={() => this.showProjects()}
         />
-        <div className="App">
+        <div className='content'>
           {withMoveAppearance(<Landing showAbout={this.showAbout} />, this.state.showLanding)}
           {withMoveAppearance(<About />, this.state.showAbout)}
           {withMoveAppearance(<Projects />, this.state.showProjects)}
