@@ -23,7 +23,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      showProjects: true
+      showLanding: true
     })
   }
 
