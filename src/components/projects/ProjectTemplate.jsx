@@ -7,19 +7,26 @@ export default class ProjectTemplate extends Component {
     render() {
         return (
             <Card style={{
-                maxWidth: '400px',
+                maxWidth: '15em',
+                minWidth: '8em',
                 boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)'
             }}>
-                <CardHeader title={this.props.title} />
+                <p
+                    style={{
+                        fontSize: '1em',
+                        fontFamily: 'Merriweather, Georgia, serif',
+                        textAlign: 'center'
+                    }}>
+                    {this.props.title}
+                </p>
                 <CardMedia
                     component="img"
                     image={this.props.image}
                     alt={this.props.title}
-                    width="200px"
                 />
                 <CardContent>
                     <p style={{
-                        fontSize: '16px',
+                        fontSize: '0.5em',
                         fontFamily: 'Merriweather, Georgia, serif',
                         textAlign: 'justify'
                     }}>
