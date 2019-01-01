@@ -7,8 +7,8 @@ export default class ProjectTemplate extends Component {
     render() {
         return (
             <Card style={{
-                maxWidth: '15em',
-                minWidth: '8em',
+                maxWidth: '20vw',
+                minWidth: '160px',
                 boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)'
             }}>
                 <p
