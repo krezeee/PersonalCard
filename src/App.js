@@ -56,11 +56,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
+      <div className='centered'>
         <Sidenav
           showAbout={() => this.showAbout()}
           showLanding={() => this.showLanding()}
