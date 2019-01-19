@@ -5,7 +5,7 @@ function GitHubIcon() {
     return (
         <IconButton>
             <a className='centered' href="https://github.com/krezeee">
-                <svg  x="0px" y="0px" width="30px" height="30px" viewBox="0 0 450 450">
+                <svg  x="0px" y="0px" width="1.1em" height="1.1em" viewBox="0 0 450 450">
                     <g>
                         <path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365
                             c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63

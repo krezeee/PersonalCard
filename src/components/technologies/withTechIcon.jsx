@@ -1,11 +1,12 @@
 import React from 'react'
 import posed from 'react-pose';
 
-const withScaleOnHover = (Component) => {
+const withTechIcon = (Component) => {
     const Wrapped = posed.div({
         hoverable: true,
         init: {
-            scale: 1
+            scale: 1,
+            margin: '0.5em'
         },
         hover: {
             scale: 1.2
@@ -19,4 +20,4 @@ const withScaleOnHover = (Component) => {
     )
 }
 
-export default withScaleOnHover
+export default withTechIcon

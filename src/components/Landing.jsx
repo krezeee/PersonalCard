@@ -1,22 +1,25 @@
-import React, { Component } from 'react'
-import { Button } from '@material-ui/core';
-import Face from '@material-ui/icons/Face';
+import React from 'react'
+import { Grow, Grid } from '@material-ui/core';
 
-export default class Landing extends Component {
-    render() {
-        return (
-            <div className='centered'>
-                <p style={{ fontSize: '1.6em', whiteSpace: 'nowrap' }}>Hello,</p>
-                <p style={{ fontSize: '1.4em', whiteSpace: 'nowrap' }}>I'm Paweł</p>
-                <p style={{ fontSize: '1em', whiteSpace: 'nowrap' }}>and I code!</p>
-                <Button style={{ marginTop: '20px' }}
-                    variant="fab"
-                    color="default"
-                    aria-label="Add"
-                    onClick={this.props.showAbout}>
-                    <Face />
-                </Button>
-            </div>
-        )
-    }
+function Landing(props) {
+    return (
+        <Grow in={props.animate}
+            style={{ transformOrigin: '0 0 0' }}
+            {...(props.animate
+                ? { timeout: 1000 }
+                : {})
+            }
+        >
+            <Grid container
+                justify='center'
+                direction='column'
+                alignItems='center'
+                style={{ padding: '5em' }}>
+                <p style={{ fontSize: '2em', whiteSpace: 'nowrap' }}>Hello!</p>
+                <p style={{ fontSize: '1.6em', whiteSpace: 'nowrap' }}>I'm Paweł and I'm a Software Engineer.</p>
+            </Grid>
+        </Grow>
+    )
 }
+
+export default Landing
