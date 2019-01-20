@@ -12,10 +12,11 @@ function Image(props) {
             }
         >
             <img style={{
-                marginBottom: '0.5em',
+                marginTop: '1.5em',
+                marginRight: '1em',
                 borderRadius: '50%',
-                width: '12em',
-                height: '12em',
+                width: '6em',
+                height: '6em',
                 boxShadow: '0 8px 12px 0 rgba(0, 0, 0, 0.4)'
             }}
                 src={MyPhoto} alt='' />

@@ -23,7 +23,7 @@ function Technologies(props) {
             <div className='centered' >
                 <p
                     style={{
-                        fontSize: '0.8em',
+                        fontSize: '0.4em',
                         color: 'grey',
                         marginBottom: '4em',
                         textAlign: 'center'

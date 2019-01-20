@@ -11,20 +11,16 @@ function AboutContent(props) {
             }
         >
             <div style={{
-                margin: '0.5em',
-                marginTop: '3em',
-                marginLeft: '3em',
-                width: '36em',
-                minHeight: '22em'
+                maxWidth: '18em'
             }}>
                 <p style={{
-                    fontSize: '1.6em',
+                    fontSize: '1em',
                     marginBottom: '2em'
                 }}>
                     My name is Paweł Krężel and I'm a Software Engineer.
                      </p>
                 <p style={{
-                    fontSize: '1.2em',
+                    fontSize: '0.5em',
                     textAlign: 'justify',
                     marginBottom: '2em'
                 }}>
@@ -33,13 +29,13 @@ function AboutContent(props) {
                     Also I'm thriving with web development and I'm a huge fan of the cloud.
                 </p>
                 <p style={{
-                    fontSize: '1.4em',
+                    fontSize: '0.6em',
                     marginBottom: '2em'
                 }}>
                     Any idea for a project?
                 </p>
                 <p style={{
-                    fontSize: '1.4em'
+                    fontSize: '0.7em'
                 }}>
                     Reach me out!
                 </p>

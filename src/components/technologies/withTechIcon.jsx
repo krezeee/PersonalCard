@@ -6,7 +6,6 @@ const withTechIcon = (Component) => {
         hoverable: true,
         init: {
             scale: 1,
-            margin: '0.5em'
         },
         hover: {
             scale: 1.2

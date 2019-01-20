@@ -14,9 +14,9 @@ function Landing(props) {
                 justify='center'
                 direction='column'
                 alignItems='center'
-                style={{ padding: '5em' }}>
-                <p style={{ fontSize: '2em', whiteSpace: 'nowrap' }}>Hello!</p>
-                <p style={{ fontSize: '1.6em', whiteSpace: 'nowrap' }}>I'm Paweł and I'm a Software Engineer.</p>
+                style={{ padding: '1em' }}>
+                <p style={{ fontSize: '1.5em', whiteSpace: 'nowrap' }}>Hello!</p>
+                <p style={{ fontSize: '0.8em', whiteSpace: 'nowrap' }}>I'm Paweł and I'm a Software Engineer.</p>
             </Grid>
         </Grow>
     )

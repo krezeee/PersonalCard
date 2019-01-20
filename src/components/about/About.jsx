@@ -10,11 +10,11 @@ function About(props) {
             direction='row'
             justify='center'
             alignContent='center'
-            alignItems='center'
+            alignItems='flex-start'
             spacing='32'>
             <Grid direction='column'
                 justify='center'
-                alignItems='center'
+                alignItems='flex-start'
                 alignContent='center'>
                 <Image animate={props.animate} />
                 <SocialPanel animate={props.animate} />

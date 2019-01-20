@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css'
 import { Input, Grid, Tooltip } from '@material-ui/core';
 import History from './components/history/History';
 import Landing from './components/Landing';
@@ -29,7 +30,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        this.setState({ showLanding: true })
+        this.setState({ showAbout: true })
     }
 
     showLanding() {
@@ -108,7 +109,7 @@ export default class App extends Component {
                 justify='flex-start'
                 alignItems='center'
                 direction='column'
-                style={{ marginTop: '2em', marginBottom: '4em' }}>
+                style={{ marginBottom: '4em' }}>
                 <History first={this.state.first}
                     second={this.state.second}
                     third={this.state.third}

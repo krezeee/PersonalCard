@@ -17,7 +17,8 @@ function SocialPanel(props) {
             <div style={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                marginRight: '1em',
             }}>
                 {withPress(LinkedInIcon)}
                 {withPress(GitHubIcon)}

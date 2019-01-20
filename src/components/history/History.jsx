@@ -2,10 +2,10 @@ import React from 'react'
 
 function History(props) {
     return (
-        <div>
-            <p style={{ color: 'lightgrey' }}>{props.third}</p>
-            <p style={{ color: 'grey' }}>{props.second}</p>
-            <p>{props.first}</p>
+        <div className='history'>
+            <p style={{ color: 'lightgrey', margin: '2px' }}>{props.third}</p>
+            <p style={{ color: 'grey', margin: '2px' }}>{props.second}</p>
+            <p style={{ margin: '2px' }}>{props.first}</p>
         </div>
     )
 }
