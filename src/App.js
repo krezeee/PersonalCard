@@ -5,6 +5,7 @@ import History from './components/history/History';
 import Landing from './components/Landing';
 import About from './components/about/About';
 import Technologies from './components/technologies/Technologies'
+import Projects from './components/projects/Projects';
 
 export default class App extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        this.setState({ showAbout: true })
+        this.setState({ showLanding: true })
     }
 
     showLanding() {
@@ -92,8 +93,11 @@ export default class App extends Component {
         else if (value === 'about') {
             this.showAbout()
         }
-        else if (value == 'skills') {
+        else if (value === 'skills') {
             this.showSkills()
+        }
+        else if (value === 'projects') {
+            this.showProjects()
         }
     }
 
@@ -115,7 +119,7 @@ export default class App extends Component {
                     third={this.state.third}
                 />
                 <Tooltip
-                    title="Available commands: hello, about, skills"
+                    title="Available commands: hello, about, skills, projects"
                     placement="right"
                     style={{ marginBottom: '6em' }}>
                     <Input value={this.state.currentInput}
@@ -125,6 +129,7 @@ export default class App extends Component {
                 {this.state.showLanding && <Landing animate={this.state.showLanding} />}
                 {this.state.showAbout && <About animate={this.state.showAbout} />}
                 {this.state.showSkills && <Technologies animate={this.state.showSkills} />}
+                {this.state.showProjects && <Projects />}
             </Grid >
         )
     }

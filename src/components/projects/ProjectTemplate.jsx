@@ -1,39 +1,37 @@
-import React, { Component } from 'react';
-import { Card, CardHeader } from '@material-ui/core';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import React from 'react'
+import { Grow } from '@material-ui/core';
 
-export default class ProjectTemplate extends Component {
-    render() {
-        return (
-            <Card style={{
-                minWidth: '8em',
-                maxWidth: '14em',
-                boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)'
+function ProjectTemplate(props) {
+    return (
+        <Grow in={props.animate}
+            style={{ transformOrigin: '0 0 0' }}
+            {...(props.animate
+                ? { timeout: props.timeout }
+                : {})
+            }
+        >
+            <div style={{
+                width: '28em',
+                display: 'grid',
+                gridTemplateColumns: '1fr 2fr'
             }}>
                 <p
                     style={{
-                        fontSize: '1em',
-                        fontFamily: 'Merriweather, Georgia, serif',
-                        textAlign: 'center'
+                        fontSize: '0.8em',
+                        gridColumn: '1'
                     }}>
-                    {this.props.title}
+                    {props.title}
                 </p>
-                <CardMedia
-                    component="img"
-                    image={this.props.image}
-                    alt={this.props.title}
-                />
-                <CardContent>
-                    <p style={{
-                        fontSize: '0.5em',
-                        fontFamily: 'Merriweather, Georgia, serif',
-                        textAlign: 'justify'
-                    }}>
-                        {this.props.description}
-                    </p>
-                </CardContent>
-            </Card>
-        )
-    }
+                <p style={{
+                    textAlign: 'justify',
+                    fontSize: '0.45em',
+                    gridColumn: '2'
+                }}>
+                    {props.description}
+                </p>
+            </div >
+        </Grow>
+    )
 }
+
+export default ProjectTemplate

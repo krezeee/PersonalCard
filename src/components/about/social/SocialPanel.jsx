@@ -1,5 +1,5 @@
 import React from 'react'
-import withPress from '../../animations/withPress';
+import withPress from './withPress';
 import LinkedInIcon from './icons/LinkedInIcon';
 import GitHubIcon from './icons/GitHubIcon';
 import TwitterIcon from './icons/TwitterIcon';
