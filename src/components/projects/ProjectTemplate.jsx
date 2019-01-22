@@ -18,7 +18,8 @@ function ProjectTemplate(props) {
                 <p
                     style={{
                         fontSize: '0.8em',
-                        gridColumn: '1'
+                        gridColumn: '1',
+                        textAlign: 'left'
                     }}>
                     {props.title}
                 </p>
