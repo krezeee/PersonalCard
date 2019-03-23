@@ -1,7 +1,12 @@
 import React from 'react'
 import { Grow } from '@material-ui/core';
+import DescriptionParagraph from './DescriptionParagraph';
 
 function ProjectTemplate(props) {
+    let paragraphs = props.description.map(paragraph => {
+        return <DescriptionParagraph description={paragraph} />
+    })
+
     return (
         <Grow in={props.animate}
             style={{ transformOrigin: '0 0 0' }}
@@ -13,6 +18,7 @@ function ProjectTemplate(props) {
             <div style={{
                 width: '28em',
                 display: 'grid',
+                marginTop: '0.5em',
                 gridTemplateColumns: '1fr 2fr'
             }}>
                 <p
@@ -23,13 +29,7 @@ function ProjectTemplate(props) {
                     }}>
                     {props.title}
                 </p>
-                <p style={{
-                    textAlign: 'justify',
-                    fontSize: '0.45em',
-                    gridColumn: '2'
-                }}>
-                    {props.description}
-                </p>
+                {paragraphs}
             </div >
         </Grow>
     )

@@ -54,7 +54,7 @@ export default class App extends Component {
                 />
                 <Tooltip
                     title="Available commands: hello, about, skills, projects"
-                    placement="right"
+                    placement="bottom"
                     style={{ marginBottom: '6em' }}>
                     <Input value={this.state.currentInput}
                         onKeyPress={(e) => this.handleInputEnter(e)}

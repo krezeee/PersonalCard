@@ -15,9 +15,14 @@ function Projects() {
                 timeout={700}
                 animate={true} />
             <ProjectTemplate
+                title={contents.ViewerProject.title}
+                description={contents.ViewerProject.description}
+                timeout={1000}
+                animate={true} />
+            <ProjectTemplate
                 title={contents.Where2devProject.title}
                 description={contents.Where2devProject.description}
-                timeout={1000}
+                timeout={1300}
                 animate={true} />
         </Grid>
     )
