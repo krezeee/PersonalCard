@@ -1,0 +1,31 @@
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Merriweather", "Georgia", serif;
+  text-align: center;
+  background-color: #f1f1f1;
+  font-size: calc(1em + 1vw);
+}
+
+p {
+  font-size: 0.5em;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.history {
+  height: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

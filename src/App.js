@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+import './App.scss'
 import { Input, Grid, Tooltip } from '@material-ui/core';
 import History from './components/history/History';
 import Landing from './components/Landing';
@@ -13,7 +13,7 @@ export default class App extends Component {
 
         this.state = {
             currentInput: '',
-            currentComponentName: 'hello',
+            currentComponentName: 'skills',
             first: '',
             second: '',
             third: ''
