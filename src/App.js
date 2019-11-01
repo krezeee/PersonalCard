@@ -13,7 +13,7 @@ export default class App extends Component {
 
         this.state = {
             currentInput: '',
-            currentComponentName: 'skills',
+            currentComponentName: 'hello',
             first: '',
             second: '',
             third: ''
