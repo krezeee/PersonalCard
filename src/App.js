@@ -6,6 +6,7 @@ import Landing from './components/Landing';
 import About from './components/about/About';
 import Technologies from './components/technologies/Technologies'
 import Projects from './components/projects/Projects';
+import { Viewer } from './components/viewer/Viewer';
 
 export default class App extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export default class App extends Component {
 
         this.state = {
             currentInput: '',
-            currentComponentName: 'skills',
+            currentComponentName: 'viewer',
             first: '',
             second: '',
             third: ''
@@ -64,6 +65,7 @@ export default class App extends Component {
                 {this.state.currentComponentName === 'about' && <About animate={true}/>}
                 {this.state.currentComponentName === 'skills' && <Technologies animate={true}/>}
                 {this.state.currentComponentName === 'projects' && <Projects />}
+                {this.state.currentComponentName === 'viewer' && <Viewer />}
             </Grid >
         )
     }
