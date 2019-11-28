@@ -29,7 +29,7 @@ export const Viewer = () => {
       new BABYLON.Vector3(0, -1, 0),
       scene
     );
-    light.position = new BABYLON.Vector3(0, 50, 0);
+    light.position = new BABYLON.Vector3(0, 20, 0);
     light.intensity = 0.5;
     light.autoUpdateExtends = false;
 
@@ -59,22 +59,22 @@ export const Viewer = () => {
     water.material = materials.waterMaterial;
 
     // scene.debugLayer.show();
-    const balls = [];
+    let ball = null;
     let particleSystem = null;
-    setInterval(() => {
-      const ball = new Ball(scene, shadowGenerator, materials);
-      particleSystem = createParticleSystem(ball, false, scene);
-      balls.push(ball);
-    }, 5000);
 
     scene.registerBeforeRender(() => {
-      balls.forEach(ball => {
-        if (ball.intersectsMesh(water, true)) {
-          if (particleSystem) {
-            particleSystem.dispose();
-          }
+      if (!ball) {
+        ball = new Ball(scene, shadowGenerator, materials);
+        particleSystem = createParticleSystem(ball, false, scene);
+      }
+
+      if (ball.intersectsMesh(water, true)) {
+        if (particleSystem) {
+          particleSystem.dispose();
         }
-      });
+        ball.dispose();
+        ball = null;
+      }
     });
 
     engine.runRenderLoop(() => {
