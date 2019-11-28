@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import * as BABYLON from "babylonjs";
+import { Color3 } from "babylonjs";
+import zIndex from "@material-ui/core/styles/zIndex";
 
 export default class ViewerEngine extends Component {
   componentDidMount() {
@@ -12,6 +14,7 @@ export default class ViewerEngine extends Component {
 
     let scene = new BABYLON.Scene(this.engine);
     this.scene = scene;
+    this.scene.clearColor = Color3.FromHexString("#f1f1f1");
 
     if (typeof this.props.onSceneMount === "function") {
       this.props.onSceneMount({
@@ -38,6 +41,11 @@ export default class ViewerEngine extends Component {
   };
 
   render() {
-    return <canvas style={{ width: "100%" }} ref={this.onCanvasLoaded} />;
+    return (
+      <canvas
+        style={{ width: "100%", zIndex: "0" }}
+        ref={this.onCanvasLoaded}
+      />
+    );
   }
 }
