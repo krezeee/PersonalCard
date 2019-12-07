@@ -10,7 +10,7 @@ export const createWater = (scene, materials) => {
   water.physicsImpostor = new PhysicsImpostor(
     water,
     PhysicsImpostor.BoxImpostor,
-    { mass: 0, restitution: 0.1 },
+    { mass: 0, restitution: 0.05 },
     scene
   );
 

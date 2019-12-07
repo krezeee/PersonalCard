@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, IconButton } from "@material-ui/core";
+import { AppBar, Toolbar, IconButton, Badge } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
 import HomeIcon from "@material-ui/icons/Home";
@@ -39,7 +39,9 @@ export const Header = () => {
         </Link>
         <Link to="/game">
           <IconButton>
-            <SportsEsportsIcon />
+            <Badge badgeContent={"beta"} color="primary">
+              <SportsEsportsIcon />
+            </Badge>
           </IconButton>
         </Link>
       </Toolbar>

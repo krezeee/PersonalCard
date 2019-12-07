@@ -51,8 +51,7 @@ export const Viewer = () => {
     materials.waterMaterial.addToRenderList(boundary);
 
     let ball = null;
-    let stub = null;
-    let particleSystem = null;
+    let particleSystem = createParticleSystem(scene);
 
     scene.registerBeforeRender(() => {
       if (!ball) {
@@ -60,23 +59,14 @@ export const Viewer = () => {
       }
 
       if (ball.intersectsMesh(water, true)) {
-        stub = MeshBuilder.CreateSphere("temp", { diameter: 0.1 }, scene);
-        stub.position = ball.position;
-        particleSystem = createParticleSystem(stub, false, scene);
+        particleSystem.emitter = ball.position;
+        particleSystem.manualEmitCount = 100;
+        particleSystem.start();
 
         ball.dispose();
         ball = null;
       }
     });
-
-    setInterval(() => {
-      if (particleSystem && stub) {
-        particleSystem.dispose();
-        particleSystem = null;
-        stub.dispose();
-        stub = null;
-      }
-    }, 1000);
 
     engine.runRenderLoop(() => {
       if (scene) {

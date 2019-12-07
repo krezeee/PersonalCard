@@ -41,7 +41,7 @@ export const createBasket = (scene, materials) => {
   basket.physicsImpostor = new PhysicsImpostor(
     basket,
     PhysicsImpostor.BoxImpostor,
-    { mass: 10000, friction: 1, restitution: 0.5 },
+    { mass: 5000, friction: 1, restitution: 0.7 },
     scene
   );
 
