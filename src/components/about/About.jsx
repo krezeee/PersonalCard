@@ -2,33 +2,25 @@ import React from "react";
 import { SocialPanel } from "./social/SocialPanel";
 import { AboutContent } from "./AboutContent";
 import { Image } from "./Image";
-import { Grid } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import Technologies from "./technologies/Technologies";
 
 export const About = () => {
   return (
-    <Grid
-      container
+    <Box
       direction="column"
       justify="center"
-      alignContent="center"
       alignItems="center"
       style={{ fontSize: "2em" }}
     >
-      <Grid
-        direction="column"
-        justify="center"
-        alignItems="center"
-        alignContent="center"
-      >
+      <Box direction="column" justify="center" alignItems="center">
         <Image />
         <SocialPanel />
-      </Grid>
-      <Grid>
+      </Box>
+      <Box direction="column" justify="center" alignItems="center">
         <AboutContent />
-      </Grid>
-
+      </Box>
       <Technologies />
-    </Grid>
+    </Box>
   );
 };

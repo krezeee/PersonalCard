@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.scss";
 import {
   Box,
@@ -16,22 +16,16 @@ const theme = createMuiTheme({
   }
 });
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <Router>
-          <Header />
-          <Box className="app">
-            <Routes />
-          </Box>
-        </Router>
-      </MuiThemeProvider>
-    );
-  }
-}
+export const App = () => {
+  return (
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Header />
+        <Box className="app">
+          <Routes />
+        </Box>
+      </Router>
+    </MuiThemeProvider>
+  );
+};
