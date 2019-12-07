@@ -1,11 +1,14 @@
 import React from "react";
 import * as BABYLON from "babylonjs";
 import ViewerEngine from "./ViewerEngine";
-import { Ball } from "./balls/ball";
-import { ShadowGenerator, ParticleHelper } from "babylonjs";
+import { createBall } from "./balls/ball";
+import { ShadowGenerator, MeshBuilder } from "babylonjs";
 import { Materials } from "./materials/materials";
-import { Basket } from "./basket/basket";
+import { createBasket } from "./basket/basket";
 import { createParticleSystem } from "./particles/particles";
+import { createBoundary } from "./ground/boundary";
+import { createWater } from "./ground/water";
+import { createGround } from "./ground/ground";
 
 export const Viewer = () => {
   const onSceneMount = e => {
@@ -18,19 +21,18 @@ export const Viewer = () => {
 
     const camera = new BABYLON.FreeCamera(
       "camera1",
-      new BABYLON.Vector3(0, 100, -100),
+      new BABYLON.Vector3(0, 70, -120),
       scene
     );
-    camera.setTarget(BABYLON.Vector3.Zero());
-    // camera.attachControl(canvas, true);
+    camera.setTarget(new BABYLON.Vector3(0, 10, 0));
 
     const light = new BABYLON.PointLight(
       "dir01",
       new BABYLON.Vector3(0, -1, 0),
       scene
     );
-    light.position = new BABYLON.Vector3(0, 20, 0);
-    light.intensity = 0.5;
+    light.position = new BABYLON.Vector3(0, 50, 0);
+    light.intensity = 0.1;
     light.autoUpdateExtends = false;
 
     const shadowGenerator = new ShadowGenerator(1024, light);
@@ -39,43 +41,42 @@ export const Viewer = () => {
     shadowGenerator.bias = 0.01;
 
     const materials = new Materials(scene);
-    const ground = BABYLON.Mesh.CreateGround("ground1", 150, 150, 2, scene);
-    ground.material = materials.ground;
-    ground.receiveShadows = true;
-    ground.physicsImpostor = new BABYLON.PhysicsImpostor(
-      ground,
-      BABYLON.PhysicsImpostor.PlaneImpostor,
-      { mass: 0, restitution: 0.1 },
-      scene
-    );
 
-    const basket = new Basket(scene, materials);
-
-    const water = BABYLON.Mesh.CreateGround("pool", 175, 175, 2, scene);
-    water.position.y = 0;
-
-    materials.waterMaterial.addToRenderList(basket);
+    const ground = createGround(scene, materials);
+    const boundary = createBoundary(scene, materials);
+    const basket = createBasket(scene, materials);
+    const water = createWater(scene, materials);
     materials.waterMaterial.addToRenderList(ground);
-    water.material = materials.waterMaterial;
+    materials.waterMaterial.addToRenderList(basket);
+    materials.waterMaterial.addToRenderList(boundary);
 
-    // scene.debugLayer.show();
     let ball = null;
+    let stub = null;
     let particleSystem = null;
 
     scene.registerBeforeRender(() => {
       if (!ball) {
-        ball = new Ball(scene, shadowGenerator, materials);
-        particleSystem = createParticleSystem(ball, false, scene);
+        ball = createBall(scene, shadowGenerator, materials);
       }
 
       if (ball.intersectsMesh(water, true)) {
-        if (particleSystem) {
-          particleSystem.dispose();
-        }
+        stub = MeshBuilder.CreateSphere("temp", { diameter: 0.1 }, scene);
+        stub.position = ball.position;
+        particleSystem = createParticleSystem(stub, false, scene);
+
         ball.dispose();
         ball = null;
       }
     });
+
+    setInterval(() => {
+      if (particleSystem && stub) {
+        particleSystem.dispose();
+        particleSystem = null;
+        stub.dispose();
+        stub = null;
+      }
+    }, 1000);
 
     engine.runRenderLoop(() => {
       if (scene) {
@@ -85,7 +86,7 @@ export const Viewer = () => {
   };
 
   return (
-    <div style={{ width: "100vw" }}>
+    <div style={{ width: "100vw", zIndex: 0 }}>
       <ViewerEngine onSceneMount={onSceneMount} />
     </div>
   );

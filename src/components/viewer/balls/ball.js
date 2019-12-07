@@ -2,13 +2,12 @@ import { PhysicsImpostor, Mesh } from "babylonjs";
 
 const INITIAL_HEIGHT = 100;
 
-export const Ball = (scene, shadowGenerator, materials) => {
+export const createBall = (scene, shadowGenerator, materials) => {
   let sphere;
   let ballCategory = "bronze";
 
   const randX = Math.round(Math.random() * 100 - 50);
   const randZ = Math.round(Math.random() * 100 - 50);
-  console.log(randX);
   if (randX % 15 === 0) {
     ballCategory = "golden";
   } else if (randX % 3 === 0) {
@@ -37,7 +36,7 @@ export const Ball = (scene, shadowGenerator, materials) => {
   sphere.physicsImpostor = new PhysicsImpostor(
     sphere,
     PhysicsImpostor.SphereImpostor,
-    { mass: 1000, restitution: 1 },
+    { mass: 1000, restitution: 0.5 },
     scene
   );
   shadowGenerator.addShadowCaster(sphere);

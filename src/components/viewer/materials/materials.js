@@ -26,7 +26,7 @@ export class Materials {
 
     this.waterMaterial.backFaceCulling = true;
     this.waterMaterial.windForce = -10;
-    this.waterMaterial.waveHeight = 1;
+    this.waterMaterial.waveHeight = 0.1;
     this.waterMaterial.bumpHeight = 0.1;
     this.waterMaterial.windDirection = new Vector2(1, 1);
     this.waterMaterial.waterColor = new Color3(0.1, 0.1, 0.6);

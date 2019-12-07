@@ -7,22 +7,21 @@ import {
   HighlightLayer
 } from "babylonjs";
 
-export const Basket = (scene, materials) => {
+export const createBasket = (scene, materials) => {
   const highlightLayer = new HighlightLayer("highlightlayer", scene);
 
-  const basket = MeshBuilder.CreateBox(
+  const basket = MeshBuilder.CreateCylinder(
     "Basket",
     {
-      size: 10,
-      width: 20,
-      height: 10,
-      depth: 20
+      arc: 1,
+      diameter: 20,
+      height: 2
     },
     scene
   );
-
-  basket.position = new Vector3(0, 30, 0);
+  basket.position = new Vector3(0, 50, 0);
   basket.material = materials.concrete;
+  basket.receiveShadows = true;
 
   const pointerDragBehavior = new PointerDragBehavior({
     dragPlaneNormal: new Vector3(0, 1, 0)
@@ -42,7 +41,7 @@ export const Basket = (scene, materials) => {
   basket.physicsImpostor = new PhysicsImpostor(
     basket,
     PhysicsImpostor.BoxImpostor,
-    { mass: 10000, friction: 1, restitution: 0.7 },
+    { mass: 10000, friction: 1, restitution: 0.5 },
     scene
   );
 

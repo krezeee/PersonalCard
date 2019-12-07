@@ -22,7 +22,7 @@ export const createParticleSystem = (ball, useGPUVersion, scene) => {
   particleSystem.emitRate = 10000;
   particleSystem.particleEmitterType = new SphereParticleEmitter(2.5);
   particleSystem.particleTexture = new Texture("/assets/flare.jpg", scene);
-  particleSystem.maxLifeTime = 3;
+  particleSystem.maxLifeTime = 0.1;
   particleSystem.minSize = 0.01;
   particleSystem.maxSize = 0.3;
   particleSystem.gravity.y = 5;
