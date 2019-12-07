@@ -14,19 +14,14 @@ import TypescriptIcon from "./icons/TypescriptIcon";
 
 function Technologies(props) {
   return (
-    <Grow in={props.animate} {...(props.animate ? { timeout: 1000 } : {})}>
+    <Grow in={true} timeout={1000}>
       <div className="centered">
-        <p className="title">- SKILLS -</p>
         <div className="technologies-row">
           {withTechIcon(DotNetIcon)}
           {withTechIcon(CSharpIcon)}
-        </div>
-        <div className="technologies-row">
           {withTechIcon(AngularIcon)}
           {withTechIcon(ReactIcon)}
           {withTechIcon(ReduxIcon)}
-        </div>
-        <div className="technologies-row">
           {withTechIcon(TypescriptIcon)}
           {withTechIcon(JavascriptIcon)}
           {withTechIcon(HTMLIcon)}

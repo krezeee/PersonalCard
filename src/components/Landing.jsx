@@ -1,7 +1,7 @@
 import React from "react";
 import { Grow, Grid } from "@material-ui/core";
 
-function Landing(props) {
+export const Landing = () => {
   return (
     <Grid
       container
@@ -10,16 +10,14 @@ function Landing(props) {
       alignItems="center"
       style={{ padding: "1em" }}
     >
-      <Grow in={props.animate} {...(props.animate ? { timeout: 1000 } : {})}>
-        <p style={{ fontSize: "1.5em", whiteSpace: "nowrap" }}>Hello!</p>
+      <Grow in={true} timeout={1000}>
+        <p style={{ fontSize: "2.5em", whiteSpace: "nowrap" }}>Hello!</p>
       </Grow>
-      <Grow in={props.animate} {...(props.animate ? { timeout: 1300 } : {})}>
-        <p style={{ fontSize: "0.8em", whiteSpace: "nowrap" }}>
+      <Grow in={true} timeout={1300}>
+        <p style={{ fontSize: "1.8em", whiteSpace: "nowrap" }}>
           I'm Paweł and I'm a Software Engineer.
         </p>
       </Grow>
     </Grid>
   );
-}
-
-export default Landing;
+};

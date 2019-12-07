@@ -1,30 +1,34 @@
-import React from 'react';
-import SocialPanel from './social/SocialPanel';
-import AboutContent from './AboutContent';
-import Image from './Image';
-import { Grid } from '@material-ui/core';
+import React from "react";
+import { SocialPanel } from "./social/SocialPanel";
+import { AboutContent } from "./AboutContent";
+import { Image } from "./Image";
+import { Grid } from "@material-ui/core";
+import Technologies from "../technologies/Technologies";
 
-function About(props) {
-    return (
-        <Grid container
-            direction='row'
-            justify='center'
-            alignContent='center'
-            alignItems='flex-start'
-            spacing='32'>
-            <Grid direction='column'
-                justify='center'
-                alignItems='flex-start'
-                alignContent='center'>
-                <Image animate={props.animate} />
-                <SocialPanel animate={props.animate} />
-            </Grid>
-            <Grid >
-                <AboutContent animate={props.animate} />
-            </Grid>
-        </Grid>
+export const About = () => {
+  return (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignContent="center"
+      alignItems="center"
+      style={{ fontSize: "2em" }}
+    >
+      <Grid
+        direction="column"
+        justify="center"
+        alignItems="center"
+        alignContent="center"
+      >
+        <Image />
+        <SocialPanel />
+      </Grid>
+      <Grid>
+        <AboutContent />
+      </Grid>
 
-    )
-}
-
-export default About;
+      <Technologies />
+    </Grid>
+  );
+};

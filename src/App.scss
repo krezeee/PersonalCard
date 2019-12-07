@@ -9,11 +9,14 @@ body {
   font-family: "Merriweather", "Georgia", serif;
   text-align: center;
   background-color: #f1f1f1;
-  font-size: calc(1em + 1vw);
 }
 
-p {
-  font-size: 0.5em;
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .centered {
@@ -22,18 +25,3 @@ p {
   align-items: center;
   justify-content: center;
 }
-
-.history {
-  z-index: 1;
-  height: 2.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.command-terminal {
-  z-index: 1;
-  position: absolute;
-  top: 1em;
-}
-

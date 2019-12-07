@@ -1,47 +1,53 @@
-import React from 'react'
-import { Grow } from '@material-ui/core';
+import React from "react";
+import { Grow } from "@material-ui/core";
 
-function AboutContent(props) {
-    return (
-        <Grow in={props.animate}
-            style={{ transformOrigin: '0 0 0' }}
-            {...(props.animate
-                ? { timeout: 1200 }
-                : {})
-            }
+export const AboutContent = () => {
+  return (
+    <Grow in={true} timeout={1000}>
+      <div
+        style={{
+          maxWidth: "18em"
+        }}
+      >
+        <p
+          style={{
+            fontSize: "1em",
+            marginBottom: "2em"
+          }}
         >
-            <div style={{
-                maxWidth: '18em'
-            }}>
-                <p style={{
-                    fontSize: '1em',
-                    marginBottom: '2em'
-                }}>
-                    My name is Paweł Krężel and I'm a Software Engineer.
-                     </p>
-                <p style={{
-                    fontSize: '0.5em',
-                    textAlign: 'justify',
-                    marginBottom: '2em'
-                }}>
-                    A passionate for innovation and new technology person, with strong background in Civil Engineering.
-                    I'm interrested in Building Information Modeling, with most of my career spent around Autodesk Revit.
-                    Also I'm thriving with web development and I'm a huge fan of the cloud.
-                </p>
-                <p style={{
-                    fontSize: '0.6em',
-                    marginBottom: '2em'
-                }}>
-                    Any idea for a project?
-                </p>
-                <p style={{
-                    fontSize: '0.7em'
-                }}>
-                    Reach me out!
-                </p>
-            </div >
-        </Grow>
-    )
-}
+          My name is Paweł Krężel and I'm a Software Engineer.
+        </p>
+        <p
+          style={{
+            fontSize: "0.5em",
+            textAlign: "justify",
+            marginBottom: "2em"
+          }}
+        >
+          A passionate for innovation and new technology person, with strong
+          background in Civil Engineering. I'm interrested in Building
+          Information Modeling, with most of my career spent around Autodesk
+          Revit. Also I'm thriving with web development and I'm a huge fan of
+          the cloud.
+        </p>
+        <p
+          style={{
+            fontSize: "0.6em",
+            marginBottom: "2em"
+          }}
+        >
+          Any idea for a project?
+        </p>
+        <p
+          style={{
+            fontSize: "0.7em"
+          }}
+        >
+          Reach me out!
+        </p>
+      </div>
+    </Grow>
+  );
+};
 
-export default AboutContent
+export default AboutContent;
