@@ -24,8 +24,16 @@ p {
 }
 
 .history {
+  z-index: 1;
   height: 2.5em;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
+
+.command-terminal {
+  z-index: 1;
+  position: absolute;
+  top: 1em;
+}
+
