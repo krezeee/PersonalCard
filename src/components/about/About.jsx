@@ -3,7 +3,7 @@ import { SocialPanel } from "./social/SocialPanel";
 import { AboutContent } from "./AboutContent";
 import { Image } from "./Image";
 import { Grid } from "@material-ui/core";
-import Technologies from "../technologies/Technologies";
+import Technologies from "./technologies/Technologies";
 
 export const About = () => {
   return (
