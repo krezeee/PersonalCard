@@ -1,4 +1,4 @@
-import { PhysicsImpostor, Mesh } from "babylonjs";
+import { PhysicsImpostor, Mesh, Color3 } from "babylonjs";
 
 const INITIAL_HEIGHT = 100;
 
@@ -17,18 +17,18 @@ export const createBall = (scene, shadowGenerator, materials) => {
   switch (ballCategory) {
     case "Golden":
       sphere = Mesh.CreateSphere(ballCategory, 16, 1, scene);
-      sphere.material = materials.golden;
       break;
     case "Silver":
       sphere = Mesh.CreateSphere(ballCategory, 16, 1.5, scene);
-      sphere.material = materials.silver;
       break;
     default:
       sphere = Mesh.CreateSphere(ballCategory, 16, 2, scene);
-      sphere.material = materials.random;
       break;
   }
 
+  sphere.material = materials.ballMaterial;
+  sphere.material.emissiveColor = Color3.Random();
+  sphere.material.diffuseColor = Color3.Random();
   sphere.position.y = INITIAL_HEIGHT;
   sphere.position.x = randX;
   sphere.position.z = randZ;

@@ -23,7 +23,7 @@ export const createBoundary = (scene, materials) => {
     scene
   );
   boundary.position.y = 5;
-  boundary.material = materials.concrete;
+  boundary.material = materials.standard;
   boundary.physicsImpostor = new PhysicsImpostor(
     boundary,
     PhysicsImpostor.MeshImpostor,

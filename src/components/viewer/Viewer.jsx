@@ -1,8 +1,13 @@
 import React from "react";
-import * as BABYLON from "babylonjs";
 import ViewerEngine from "./ViewerEngine";
 import { createBall } from "./balls/ball";
-import { ShadowGenerator, MeshBuilder } from "babylonjs";
+import {
+  ShadowGenerator,
+  Vector3,
+  AmmoJSPlugin,
+  FreeCamera,
+  PointLight
+} from "babylonjs";
 import { Materials } from "./materials/materials";
 import { createBasket } from "./basket/basket";
 import { createParticleSystem } from "./particles/particles";
@@ -14,31 +19,22 @@ export const Viewer = () => {
   const onSceneMount = e => {
     const { canvas, scene, engine } = e;
 
-    scene.enablePhysics(
-      new BABYLON.Vector3(0, -50, 0),
-      new BABYLON.AmmoJSPlugin()
-    );
+    scene.enablePhysics(new Vector3(0, -50, 0), new AmmoJSPlugin());
 
-    const camera = new BABYLON.FreeCamera(
-      "camera1",
-      new BABYLON.Vector3(0, 70, -120),
-      scene
-    );
-    camera.setTarget(new BABYLON.Vector3(0, 10, 0));
+    const camera = new FreeCamera("camera1", new Vector3(0, 70, -120), scene);
+    camera.setTarget(new Vector3(0, 10, 0));
 
-    const light = new BABYLON.PointLight(
-      "dir01",
-      new BABYLON.Vector3(0, -1, 0),
-      scene
-    );
-    light.position = new BABYLON.Vector3(0, 50, 0);
-    light.intensity = 0.1;
+    const light = new PointLight("dir01", new Vector3(0, -1, 0), scene);
+    light.position = new Vector3(1, 10, 1);
+    light.intensity = 0.5;
     light.autoUpdateExtends = false;
 
     const shadowGenerator = new ShadowGenerator(1024, light);
     shadowGenerator.useBlurExponentialShadowMap = true;
-    shadowGenerator.filteringQuality = BABYLON.ShadowGenerator.QUALITY_LOW;
+    shadowGenerator.filteringQuality = ShadowGenerator.QUALITY_LOW;
     shadowGenerator.bias = 0.01;
+
+    // scene.debugLayer.show();
 
     const materials = new Materials(scene);
 
@@ -52,16 +48,20 @@ export const Viewer = () => {
 
     let ball = null;
     let particleSystem = createParticleSystem(scene);
+    particleSystem.start();
 
     scene.registerBeforeRender(() => {
       if (!ball) {
         ball = createBall(scene, shadowGenerator, materials);
+        materials.waterMaterial.addToRenderList(ball);
       }
 
-      if (ball.intersectsMesh(water, true)) {
+      if (
+        ball.intersectsMesh(water, true) ||
+        Math.abs(ball.position.y - 1) < 0.01
+      ) {
         particleSystem.emitter = ball.position;
         particleSystem.manualEmitCount = 100;
-        particleSystem.start();
 
         ball.dispose();
         ball = null;

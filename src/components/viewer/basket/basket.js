@@ -20,7 +20,7 @@ export const createBasket = (scene, materials) => {
     scene
   );
   basket.position = new Vector3(0, 50, 0);
-  basket.material = materials.concrete;
+  basket.material = materials.targetBoard;
   basket.receiveShadows = true;
 
   const pointerDragBehavior = new PointerDragBehavior({
