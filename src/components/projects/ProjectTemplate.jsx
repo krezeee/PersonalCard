@@ -30,7 +30,7 @@ function ProjectTemplate(props) {
         >
           {props.title}
         </p>
-        {paragraphs}
+        <div style={{ gridColumn: "2" }}>{paragraphs}</div>
       </div>
     </Grow>
   );

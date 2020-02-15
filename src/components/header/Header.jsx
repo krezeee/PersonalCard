@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 export const Header = () => {
   const classes = useStyles();
   return (
-    <AppBar className={classes.nav} position="sticky">
+    <AppBar className={classes.nav} position="fixed">
       <Toolbar>
         <Link to="/">
           <IconButton>
