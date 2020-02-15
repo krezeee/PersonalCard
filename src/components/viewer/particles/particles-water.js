@@ -1,10 +1,10 @@
 import { ParticleSystem, Color4, Texture, Vector3 } from "babylonjs";
 
-export const createParticleSystem = scene => {
+export const createWaterParticles = scene => {
   const particleSystem = new ParticleSystem("particles", 200000, scene);
 
   particleSystem.particleTexture = new Texture(
-    "../../../../public/assets/flare.jpg",
+    "public/assets/flare.jpg",
     scene
   );
 

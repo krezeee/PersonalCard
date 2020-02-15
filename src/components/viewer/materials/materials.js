@@ -5,6 +5,7 @@ export class Materials {
   constructor(scene) {
     this.ground = new TerrainMaterial("terrain", scene);
     this.ground.diffuseColor = Color3.Blue();
+    this.ground.emissiveColor = Color3.Blue();
 
     this.targetBoard = new StandardMaterial("concrete", scene);
     this.targetBoard.emissiveTexture = new Texture(
@@ -37,7 +38,7 @@ export class Materials {
     this.waterMaterial.waveHeight = 0.1;
     this.waterMaterial.bumpHeight = 0.1;
     this.waterMaterial.windDirection = new Vector2(1, 1);
-    this.waterMaterial.waterColor = new Color3(0.1, 0.1, 0.6);
+    this.waterMaterial.waterColor = new Color3(0.1, 0.1, 1);
     this.waterMaterial.colorBlendFactor = 0.3;
     this.waterMaterial.bumpTexture = new Texture(
       "assets/water-bump.jpg",

@@ -1,6 +1,6 @@
 import React from "react";
 import ViewerEngine from "./ViewerEngine";
-import { createBall } from "./balls/ball";
+import { ballFactory } from "./balls/ball";
 import {
   ShadowGenerator,
   Vector3,
@@ -10,14 +10,18 @@ import {
 } from "babylonjs";
 import { Materials } from "./materials/materials";
 import { createBasket } from "./basket/basket";
-import { createParticleSystem } from "./particles/particles";
 import { createBoundary } from "./ground/boundary";
 import { createWater } from "./ground/water";
-import { createGround } from "./ground/ground";
+import { ScoringService } from "./score/scoring-service";
+import { createParticleSystem } from "./particles/particles-factory";
+import { particles } from "./particles/particles.enum";
+import { Scoreboard } from "./gui/scoreboard";
 
 export const Viewer = () => {
+  const scoringService = new ScoringService();
+
   const onSceneMount = e => {
-    const { canvas, scene, engine } = e;
+    const { scene, engine } = e;
 
     scene.enablePhysics(new Vector3(0, -50, 0), new AmmoJSPlugin());
 
@@ -34,39 +38,29 @@ export const Viewer = () => {
     shadowGenerator.filteringQuality = ShadowGenerator.QUALITY_LOW;
     shadowGenerator.bias = 0.01;
 
-    // scene.debugLayer.show();
+    // scene.debugLayer.show({ overlay: true, embedMode: false });
 
     const materials = new Materials(scene);
 
-    const ground = createGround(scene, materials);
+    createWater(scene, materials);
     const boundary = createBoundary(scene, materials);
     const basket = createBasket(scene, materials);
-    const water = createWater(scene, materials);
-    materials.waterMaterial.addToRenderList(ground);
     materials.waterMaterial.addToRenderList(basket);
     materials.waterMaterial.addToRenderList(boundary);
 
-    let ball = null;
-    let particleSystem = createParticleSystem(scene);
-    particleSystem.start();
+    let waterParticles = createParticleSystem(scene, particles.WATER);
+    let basketParticles = createParticleSystem(scene, particles.BASKET);
+    waterParticles.start();
+    basketParticles.start();
 
-    scene.registerBeforeRender(() => {
-      if (!ball) {
-        ball = createBall(scene, shadowGenerator, materials);
-        materials.waterMaterial.addToRenderList(ball);
-      }
-
-      if (
-        ball.intersectsMesh(water, true) ||
-        Math.abs(ball.position.y - 1) < 0.01
-      ) {
-        particleSystem.emitter = ball.position;
-        particleSystem.manualEmitCount = 100;
-
-        ball.dispose();
-        ball = null;
-      }
-    });
+    ballFactory(
+      scene,
+      shadowGenerator,
+      materials,
+      waterParticles,
+      basketParticles,
+      scoringService
+    );
 
     engine.runRenderLoop(() => {
       if (scene) {
@@ -76,7 +70,8 @@ export const Viewer = () => {
   };
 
   return (
-    <div style={{ width: "100vw", zIndex: 0 }}>
+    <div style={{ height: "100vh", width:'100vw', zIndex: 0 }}>
+      <Scoreboard scoringService={scoringService} />
       <ViewerEngine onSceneMount={onSceneMount} />
     </div>
   );

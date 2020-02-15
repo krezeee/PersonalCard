@@ -11,7 +11,7 @@ export const createBasket = (scene, materials) => {
   const highlightLayer = new HighlightLayer("highlightlayer", scene);
 
   const basket = MeshBuilder.CreateCylinder(
-    "Basket",
+    "basket",
     {
       arc: 1,
       diameter: 20,
@@ -22,6 +22,7 @@ export const createBasket = (scene, materials) => {
   basket.position = new Vector3(0, 50, 0);
   basket.material = materials.targetBoard;
   basket.receiveShadows = true;
+  basket.checkCollisions = true;
 
   const pointerDragBehavior = new PointerDragBehavior({
     dragPlaneNormal: new Vector3(0, 1, 0)
@@ -41,7 +42,7 @@ export const createBasket = (scene, materials) => {
   basket.physicsImpostor = new PhysicsImpostor(
     basket,
     PhysicsImpostor.BoxImpostor,
-    { mass: 5000, friction: 1, restitution: 0.7 },
+    { mass: 500, friction: 1, restitution: 0.7 },
     scene
   );
 

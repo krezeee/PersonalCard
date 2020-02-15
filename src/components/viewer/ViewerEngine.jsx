@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as BABYLON from "babylonjs";
 import { Color3 } from "babylonjs";
-import zIndex from "@material-ui/core/styles/zIndex";
 
 export default class ViewerEngine extends Component {
   componentDidMount() {
@@ -43,7 +42,7 @@ export default class ViewerEngine extends Component {
   render() {
     return (
       <canvas
-        style={{ width: "100%", zIndex: "0" }}
+        style={{ height: "100%", width: "100%", zIndex: "0" }}
         ref={this.onCanvasLoaded}
       />
     );
