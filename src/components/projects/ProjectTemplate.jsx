@@ -1,5 +1,5 @@
 import React from "react";
-import { Grow } from "@material-ui/core";
+import { Grow, Grid } from "@material-ui/core";
 import DescriptionParagraph from "./DescriptionParagraph";
 
 function ProjectTemplate(props) {
@@ -13,25 +13,22 @@ function ProjectTemplate(props) {
       style={{ transformOrigin: "0 0 0" }}
       {...(props.animate ? { timeout: props.timeout } : {})}
     >
-      <div
-        style={{
-          width: "28em",
-          display: "grid",
-          marginTop: "0.5em",
-          gridTemplateColumns: "1fr 2fr"
-        }}
-      >
-        <p
-          style={{
-            fontSize: "0.8em",
-            gridColumn: "1",
-            textAlign: "left"
-          }}
-        >
-          {props.title}
-        </p>
-        <div style={{ gridColumn: "2" }}>{paragraphs}</div>
-      </div>
+      <Grid container item spacing={5} justify="center">
+        <Grid item xs={2}>
+          <p
+            style={{
+              fontSize: "0.8em",
+              marginTop: "5px",
+              textAlign: "left"
+            }}
+          >
+            {props.title}
+          </p>
+        </Grid>
+        <Grid item xs={4}>
+          {paragraphs}
+        </Grid>
+      </Grid>
     </Grow>
   );
 }
