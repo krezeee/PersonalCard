@@ -18,6 +18,7 @@ import { particles } from "./particles/particles.enum";
 import { Scoreboard } from "./gui/scoreboard";
 
 export const Viewer = () => {
+
   const scoringService = new ScoringService();
 
   const onSceneMount = e => {
@@ -70,7 +71,7 @@ export const Viewer = () => {
   };
 
   return (
-    <div style={{ height: "100vh", width:'100vw', zIndex: 0 }}>
+    <div style={{ height: "100vh", width: "100vw", zIndex: 0 }}>
       <Scoreboard scoringService={scoringService} />
       <ViewerEngine onSceneMount={onSceneMount} />
     </div>

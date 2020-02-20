@@ -34,7 +34,11 @@ export const Scoreboard = props => {
   return (
     <Grow in={true} timeout={1000}>
       <div className="scoreboard">
-        <Button variant="outlined" onClick={() => props.scoringService.start()}>
+        <Button
+          variant="outlined"
+          disabled={isRunning}
+          onClick={() => props.scoringService.start()}
+        >
           {isRunning ? timeLeft : "Try"}
         </Button>
         <Score value={score} />

@@ -19,7 +19,7 @@ export const createBasket = (scene, materials) => {
     },
     scene
   );
-  basket.position = new Vector3(0, 50, 0);
+  basket.position = new Vector3(0, 20, 0);
   basket.material = materials.targetBoard;
   basket.receiveShadows = true;
   basket.checkCollisions = true;

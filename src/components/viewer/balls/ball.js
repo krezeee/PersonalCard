@@ -27,16 +27,13 @@ export const ballFactory = (
           ball.onAfterWorldMatrixUpdateObservable.add(mesh => {
             if (mesh.intersectsMesh(water)) {
               emitFailed(waterParticles, ball);
-
-              ball.dispose();
-              ball = null;
+              ball = dispose(ball);
             } else if (mesh.intersectsMesh(basket)) {
               emitScored(basketParticles, ball);
-
               scoringService.score();
-
-              ball.dispose();
-              ball = null;
+              ball = dispose(ball);
+            } else if (ball.position.y < 0) {
+              ball = dispose(ball);
             }
           });
         }
@@ -87,6 +84,12 @@ const createBall = (scene, shadowGenerator, materials) => {
 
   return sphere;
 };
+
+function dispose(ball) {
+  ball.dispose();
+  ball = null;
+  return ball;
+}
 
 function emitFailed(waterParticles, ball) {
   waterParticles.emitter = ball.position;

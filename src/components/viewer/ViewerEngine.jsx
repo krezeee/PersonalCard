@@ -11,13 +11,12 @@ export default class ViewerEngine extends Component {
       this.props.adaptToDeviceRatio
     );
 
-    let scene = new BABYLON.Scene(this.engine);
-    this.scene = scene;
+    this.scene = new BABYLON.Scene(this.engine);
     this.scene.clearColor = Color3.FromHexString("#f1f1f1");
 
     if (typeof this.props.onSceneMount === "function") {
       this.props.onSceneMount({
-        scene,
+        scene: this.scene,
         engine: this.engine,
         canvas: this.canvas
       });
@@ -30,6 +29,10 @@ export default class ViewerEngine extends Component {
   }
 
   componentWillUnmount() {
+    this.scene.dispose();
+    this.scene = null;
+    this.engine.dispose();
+    this.engine = null;
     window.removeEventListener("resize", this.onResizeWindow);
   }
 
