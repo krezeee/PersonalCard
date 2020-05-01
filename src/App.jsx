@@ -6,7 +6,7 @@ import {
   MuiThemeProvider,
   createMuiTheme,
 } from "@material-ui/core";
-import { Header } from "./components/header/header.jsx";
+import { Header } from "./components/header/Header";
 import { Routes } from "./routes";
 import { BrowserRouter as Router } from "react-router-dom";
 
