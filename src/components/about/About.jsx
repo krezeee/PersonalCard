@@ -1,6 +1,6 @@
 import React from "react";
-import { SocialPanel } from "./social/Social-panel";
-import { AboutContent } from "./About-content";
+import { SocialPanel } from "./social/SocialPanel";
+import { AboutContent } from "./AboutContent";
 import { Image } from "./Image";
 import { Grid, Container } from "@material-ui/core";
 import { Technologies } from "./technologies/Technologies";
