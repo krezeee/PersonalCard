@@ -1,5 +1,5 @@
 import React from "react";
-import { Grow, Container, Typography, Grid, Box } from "@material-ui/core";
+import { Grow, Container, Typography, Box } from "@material-ui/core";
 
 export const AboutContent = () => {
   return (
