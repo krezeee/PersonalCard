@@ -1,8 +1,8 @@
 import React from "react";
 import { Grow, Grid, Typography } from "@material-ui/core";
-import { Description } from "./Description";
+import { Description } from "./Description.jsx";
 
-function ProjectTemplate(props) {
+export const ProjectTemplate = (props) => {
   let paragraphs = props.description.map((paragraph, index) => {
     return <Description key={index} description={paragraph} />;
   });
@@ -23,6 +23,4 @@ function ProjectTemplate(props) {
       </Grid>
     </Grow>
   );
-}
-
-export default ProjectTemplate;
+};
