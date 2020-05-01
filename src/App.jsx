@@ -4,16 +4,16 @@ import {
   Box,
   CssBaseline,
   MuiThemeProvider,
-  createMuiTheme
+  createMuiTheme,
 } from "@material-ui/core";
-import { Header } from "./components/header/Header";
+import { Header } from "./components/header/header";
 import { Routes } from "./routes";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: ["sans-serif", '"Montserrat"'].join(",")
-  }
+    fontFamily: ["sans-serif", '"Montserrat"'].join(","),
+  },
 });
 
 export const App = () => {
@@ -22,6 +22,7 @@ export const App = () => {
       <CssBaseline />
       <Router>
         <Header />
+        <Box m={6} />
         <Box className="app">
           <Routes />
         </Box>

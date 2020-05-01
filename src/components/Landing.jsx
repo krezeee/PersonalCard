@@ -1,25 +1,30 @@
 import React from "react";
-import { Grow, Grid } from "@material-ui/core";
+import { Grow, Grid, Box, Typography } from "@material-ui/core";
 
 export const Landing = () => {
   return (
     <Grid
       container
-      justify="center"
       direction="column"
+      justify="center"
       alignItems="center"
-      style={{ margin: "0.5em", paddingBottom: "10em" }}
+      spacing={4}
     >
-      <Grow in={true} timeout={1000}>
-        <p style={{ fontSize: "4.5em", whiteSpace: "nowrap", lineHeight: "0" }}>
-          Hello!
-        </p>
-      </Grow>
-      <Grow in={true} timeout={1300}>
-        <p style={{ fontSize: "1.8em", whiteSpace: "nowrap", lineHeight: "0" }}>
-          I'm Paweł and I'm a Software Engineer.
-        </p>
-      </Grow>
+      <Box m={10} />
+      <Grid item>
+        <Grow in={true} timeout={1000}>
+          <Typography variant="h1" align="center">
+            Hello!
+          </Typography>
+        </Grow>
+      </Grid>
+      <Grid item>
+        <Grow in={true} timeout={1300}>
+          <Typography variant="h5" align="center">
+            I'm Paweł and I'm a Software Engineer.
+          </Typography>
+        </Grow>
+      </Grid>
     </Grid>
   );
 };

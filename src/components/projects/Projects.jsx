@@ -1,37 +1,34 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
-import ProjectTemplate from "./ProjectTemplate";
-import * as contents from "./ProjectContents";
+import { Container, Box } from "@material-ui/core";
+import ProjectTemplate from "./project-template";
+import * as contents from "./project-contents";
 
-function Projects() {
+export const Projects = () => {
   return (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      style={{ fontSize: "2em" }}
-    >
+    <Container maxWidth="sm">
+      <Box m={5} />
       <ProjectTemplate
         title={contents.PrescientProject.title}
         description={contents.PrescientProject.description}
         timeout={700}
         animate={true}
       />
+      <Box m={5} />
       <ProjectTemplate
         title={contents.Where2devProject.title}
         description={contents.Where2devProject.description}
         timeout={900}
         animate={true}
       />
+      <Box m={5} />
       <ProjectTemplate
         title={contents.SohoDesign.title}
         description={contents.SohoDesign.description}
         timeout={1100}
         animate={true}
       />
-    </Grid>
+    </Container>
   );
-}
+};
 
 export default Projects;

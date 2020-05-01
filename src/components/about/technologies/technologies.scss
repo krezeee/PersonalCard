@@ -6,11 +6,6 @@
 }
 
 .technology-icon {
-  width: 1em;
-  height: 1em;
-  margin: 2em 0.5em;
-}
-
-.technologies-row {
-  display: flex;
+  width: clamp(1.5rem, 4vw, 2rem);
+  width: clamp(1.5rem, 4vw, 2rem);
 }

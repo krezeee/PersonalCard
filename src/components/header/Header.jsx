@@ -13,14 +13,14 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "transparent",
-    boxShadow: "none"
-  }
+    boxShadow: "none",
+  },
 });
 
 export const Header = () => {
   const classes = useStyles();
   return (
-    <AppBar className={classes.nav} position="fixed">
+    <AppBar className={classes.nav} position="static">
       <Toolbar>
         <Link to="/">
           <IconButton>
