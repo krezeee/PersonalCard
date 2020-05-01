@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Box } from "@material-ui/core";
-import ProjectTemplate from "./project-template";
+import ProjectTemplate from "./Project-template";
 import * as contents from "./project-contents";
 
 export const Projects = () => {
@@ -30,5 +30,3 @@ export const Projects = () => {
     </Container>
   );
 };
-
-export default Projects;

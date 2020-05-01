@@ -1,9 +1,9 @@
 import React from "react";
-import { SocialPanel } from "./social/social-panel";
-import { AboutContent } from "./about-content";
-import { Image } from "./image";
+import { SocialPanel } from "./social/Social-panel";
+import { AboutContent } from "./About-content";
+import { Image } from "./Image";
 import { Grid, Container } from "@material-ui/core";
-import { Technologies } from "./technologies/technologies";
+import { Technologies } from "./technologies/Technologies";
 
 export const About = () => {
   return (
