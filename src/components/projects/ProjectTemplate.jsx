@@ -1,6 +1,6 @@
 import React from "react";
 import { Grow, Grid, Typography } from "@material-ui/core";
-import { Description } from "./Description";
+import { Description } from "./ProjectDescription";
 
 export const ProjectTemplate = (props) => {
   let paragraphs = props.description.map((paragraph, index) => {
