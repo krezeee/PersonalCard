@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Box } from "@material-ui/core";
 import { ProjectTemplate } from "./ProjectTemplate";
-import * as contents from "./project-contents";
+import * as contents from "./ProjectContents";
 
 export const Projects = () => {
   return (
