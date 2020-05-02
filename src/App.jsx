@@ -22,7 +22,7 @@ export const App = () => {
       <CssBaseline />
       <Router>
         <Header />
-        <Box m={6} />
+        <Box m={5} />
         <Box className="app">
           <Routes />
         </Box>

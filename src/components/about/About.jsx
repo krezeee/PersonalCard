@@ -2,7 +2,7 @@ import React from "react";
 import { SocialPanel } from "./social/SocialPanel";
 import { AboutContent } from "./AboutContent";
 import { Image } from "./Image";
-import { Grid, Container } from "@material-ui/core";
+import { Grid, Container, Box } from "@material-ui/core";
 import { Technologies } from "./technologies/Technologies";
 
 export const About = () => {
@@ -13,7 +13,7 @@ export const About = () => {
         direction="column"
         justify="flex-start"
         alignItems="center"
-        spacing={5}
+        spacing={2}
       >
         <Grid item>
           <Image />
@@ -23,6 +23,7 @@ export const About = () => {
           <AboutContent />
         </Grid>
         <Grid item>
+          <Box m={2} />
           <Technologies />
         </Grid>
       </Grid>

@@ -8,8 +8,10 @@ export const Image = () => {
       <img
         style={{
           borderRadius: "50%",
-          width: "clamp(8rem, 25vw, 12rem)",
-          height: "clamp(8rem, 25vw, 12rem)",
+          width: "40vw",
+          height: "40vw",
+          maxWidth: "12rem",
+          maxHeight: "12rem",
           boxShadow: "0 8px 12px 0 rgba(0, 0, 0, 0.4)",
         }}
         src={MyPhoto}
