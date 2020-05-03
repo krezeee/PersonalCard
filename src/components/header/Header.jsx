@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     backgroundColor: "transparent",
     boxShadow: "none",
+    zIndex: 1,
   },
 });
 

@@ -18,7 +18,7 @@ export default class ViewerEngine extends Component {
       this.props.onSceneMount({
         scene: this.scene,
         engine: this.engine,
-        canvas: this.canvas
+        canvas: this.canvas,
       });
     } else {
       console.error("onSceneMount function not available");
@@ -36,7 +36,7 @@ export default class ViewerEngine extends Component {
     window.removeEventListener("resize", this.onResizeWindow);
   }
 
-  onCanvasLoaded = c => {
+  onCanvasLoaded = (c) => {
     if (c !== null) {
       this.canvas = c;
     }
@@ -45,7 +45,14 @@ export default class ViewerEngine extends Component {
   render() {
     return (
       <canvas
-        style={{ height: "100%", width: "100%", zIndex: "0" }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          height: "100%",
+          width: "100%",
+          zIndex: -1,
+        }}
         ref={this.onCanvasLoaded}
       />
     );

@@ -20,10 +20,10 @@ export const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router className="app">
         <Header />
         <Box m={5} />
-        <Box className="app">
+        <Box>
           <Routes />
         </Box>
       </Router>

@@ -6,7 +6,7 @@ import {
   Vector3,
   AmmoJSPlugin,
   FreeCamera,
-  PointLight
+  PointLight,
 } from "babylonjs";
 import { Materials } from "./materials/materials";
 import { createBasket } from "./basket/basket";
@@ -18,10 +18,9 @@ import { particles } from "./particles/particles.enum";
 import { Scoreboard } from "./gui/scoreboard";
 
 export const Viewer = () => {
-
   const scoringService = new ScoringService();
 
-  const onSceneMount = e => {
+  const onSceneMount = (e) => {
     const { scene, engine } = e;
 
     scene.enablePhysics(new Vector3(0, -50, 0), new AmmoJSPlugin());
@@ -71,7 +70,13 @@ export const Viewer = () => {
   };
 
   return (
-    <div style={{ height: "100vh", width: "100vw", zIndex: 0 }}>
+    <div
+      style={{
+        height: "100%",
+        width: "100%",
+        zIndex: -1,
+      }}
+    >
       <Scoreboard scoringService={scoringService} />
       <ViewerEngine onSceneMount={onSceneMount} />
     </div>
