@@ -4,7 +4,7 @@ import { Grow } from "@material-ui/core";
 
 export const Image = () => {
   return (
-    <Grow in={true} timeout={1000}>
+    <Grow in={true} timeout={700} style={{ transformOrigin: "0 0 0" }}>
       <img
         style={{
           borderRadius: "50%",

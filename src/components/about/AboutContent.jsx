@@ -3,7 +3,7 @@ import { Grow, Container, Typography, Box } from "@material-ui/core";
 
 export const AboutContent = () => {
   return (
-    <Grow in={true} timeout={1000}>
+    <Grow in={true} timeout={1100} style={{ transformOrigin: "0 0 0" }}>
       <Container maxWidth="sm">
         <Typography variant="h5">
           My name is Paweł Krężel. <br />

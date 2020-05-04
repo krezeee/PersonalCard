@@ -11,18 +11,15 @@ const withPress = (Component, callback) => {
     },
     hover: {
       scale: 1.2,
-      boxShadow: "0px 5px 10px rgba(0,0,0,0.2)",
     },
     press: {
       scale: 1.1,
-      boxShadow: "0px 2px 5px rgba(0,0,0,0.1)",
     },
   });
 
   return (
     <Wrapped
       style={{
-        borderRadius: "10px",
         width: "clamp(1.5rem, 2.5vw, 3.5rem)",
         height: "clamp(1.5rem, 2.5vw, 3.5rem)",
         display: "flex",

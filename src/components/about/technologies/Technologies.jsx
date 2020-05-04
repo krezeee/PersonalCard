@@ -12,9 +12,9 @@ import { Grow, Grid } from "@material-ui/core";
 import "./technologies.scss";
 import TypescriptIcon from "./icons/TypescriptIcon";
 
-export const Technologies = (props) => {
+export const Technologies = () => {
   return (
-    <Grow in={true} timeout={1000}>
+    <Grow in={true} timeout={1300} style={{ transformOrigin: "0 0 0" }}>
       <Grid container spacing={2} justify="center">
         {withTechIcon(DotNetIcon)}
         {withTechIcon(CSharpIcon)}
