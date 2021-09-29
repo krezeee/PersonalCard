@@ -38,13 +38,6 @@ export const Header = () => {
             <WorkIcon />
           </IconButton>
         </Link>
-        <Link to="/game">
-          <IconButton>
-            <Badge badgeContent={"beta"} color="primary">
-              <SportsEsportsIcon />
-            </Badge>
-          </IconButton>
-        </Link>
       </Toolbar>
     </AppBar>
   );
